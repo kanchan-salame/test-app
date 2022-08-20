@@ -92,6 +92,9 @@
             v-show="dropdownOpen"
             class="absolute right-0 z-20 w-48 py-2 mt-2 bg-white rounded-md shadow-xl"
           >
+          <JetDropdownLink :href="route('profile.show')">
+                Profile
+            </JetDropdownLink>
             <!-- Authentication -->
             <form method="POST" @submit.prevent="logout">
                 <JetResponsiveNavLink as="button">

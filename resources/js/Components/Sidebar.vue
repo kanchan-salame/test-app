@@ -50,45 +50,14 @@
         <Link
           class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
         >
-          <span class="mx-4">UI Elements</span>
+          <span class="mx-4">Companies</span>
         </Link>
 
         <Link
           class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
         >
-          <span class="mx-4">Tables</span>
+          <span class="mx-4">Contacts</span>
         </Link>
-
-        <Link
-          class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
-        >
-          <span class="mx-4">Forms</span>
-        </Link>
-
-        <Link
-          class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
-        >
-          <span class="mx-4">Cards</span>
-        </Link>
-
-        <Link
-          class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
-        >
-          <span class="mx-4">Modal</span>
-        </Link>
-
-        <Link
-          class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
-        >
-        <span class="mx-4">Blank</span>
-        </Link>
-
-        <!-- Authentication -->
-        <form method="POST" @submit.prevent="logout">
-            <JetResponsiveNavLink as="button">
-                Log Out
-            </JetResponsiveNavLink>
-        </form>
       </nav>
     </div>
   </div>
@@ -99,6 +68,7 @@ import { defineComponent, ref } from "vue";
 import { useSidebar } from "../hooks/sidebar.js";
 import { Link } from '@inertiajs/inertia-vue3';
 import JetResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
+import { Inertia } from '@inertiajs/inertia';
 
 
 
@@ -109,10 +79,5 @@ import JetResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
     const inactiveClass = ref(
       "border-gray-900 text-gray-500 hover:bg-gray-600 hover:bg-opacity-25 hover:text-gray-100"
     );
-
-
-    const logout = () => {
-        Inertia.post(route('logout'));
-    };
 
 </script>

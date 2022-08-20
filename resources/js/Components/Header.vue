@@ -114,6 +114,7 @@ import { useSidebar } from "../hooks/sidebar.js";
 import { Link } from '@inertiajs/inertia-vue3';
 import JetResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Inertia } from '@inertiajs/inertia';
+import JetDropdownLink from '@/Components/DropdownLink.vue';
 
     const dropdownOpen = ref(false);
     const { isOpen } = useSidebar();

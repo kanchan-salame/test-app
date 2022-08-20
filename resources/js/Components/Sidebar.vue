@@ -35,7 +35,7 @@
           </svg>
 
           <span class="mx-2 text-2xl font-semibold text-white"
-            >V-Dashboard</span
+            >Dashboard</span
           >
         </div>
       </div>
@@ -43,20 +43,23 @@
       <nav class="mt-10">
         <Link
           class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
+          :href="route('dashboard')"
         >
-          <span class="mx-4">Dashboard</span>
+          <span class="mx-4 text-white">Dashboard</span>
         </Link>
 
         <Link
           class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
+          :href="route('dashboard')"
         >
-          <span class="mx-4">Companies</span>
+          <span class="mx-4 text-white">Companies</span>
         </Link>
 
         <Link
           class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
+          :href="route('dashboard')"
         >
-          <span class="mx-4">Contacts</span>
+          <span class="mx-4 text-white">Contacts</span>
         </Link>
       </nav>
     </div>

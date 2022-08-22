@@ -48,16 +48,16 @@
           <span class="mx-4 text-white">Dashboard</span>
         </Link>
 
-        <Link
+        <Link v-if="$page.props.user.id == 1"
           class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
-          :href="route('dashboard')"
+          :href="route('companies.index')"
         >
           <span class="mx-4 text-white">Companies</span>
         </Link>
 
         <Link
           class="flex items-center px-6 py-2 mt-4 duration-200 border-l-4"
-          :href="route('dashboard')"
+          :href="route('contact.index')"
         >
           <span class="mx-4 text-white">Contacts</span>
         </Link>

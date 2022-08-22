@@ -49,8 +49,8 @@ class ContactController extends Controller
     public function store(StoreContactRequest $request, Contact $contact)
     {
         if($request->file('photo')) {
-            $photo = Storage::disk('local')->put('contacts', $request->file('photo'));
-            $request['photo_path'] = $photo;
+            $photo = Storage::disk('local')->put('public/contacts', $request->file('photo'));
+            $request['photo_path'] = explode('/',$photo)[1]. '/' . explode('/',$photo)[2];
         }
         $data = $request->all();
         $data['user_id'] = Auth::user()->id;

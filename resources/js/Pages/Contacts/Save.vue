@@ -24,7 +24,7 @@ const form = useForm({
     email: props.contact ? props.contact.email : '',
     phone: props.contact ? props.contact.phone : '',
     address: props.contact ? props.contact.address : '',
-    photo: props.contact ? props.contact.photo : null,
+    photo: props.contact ? props.contact.photo_path_url : null,
     id: props.contact ? props.contact.id : null,
 });
 

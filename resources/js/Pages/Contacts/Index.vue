@@ -131,7 +131,7 @@ const closeModal = () => {
                                 <div class="flex-shrink-0 w-10 h-10">
                                     <img
                                     class="w-full h-full rounded-full"
-                                    :src="contact.photo_path"
+                                    :src="contact.photo_path_url"
                                     alt="profile pic"
                                     />
                                 </div>

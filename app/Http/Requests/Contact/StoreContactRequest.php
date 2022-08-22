@@ -24,14 +24,12 @@ class StoreContactRequest extends FormRequest
      */
     public function rules()
     {
-        // dd($this->id);
         return [
             'email' => [
                 'sometimes',
                 'required',
                 'string',
                 'email',
-                // 'unique:contacts,email'
                 Rule::unique('contacts')->ignore($this->id)
             ],
             'first_name' => ['required', 'string'],
@@ -41,11 +39,10 @@ class StoreContactRequest extends FormRequest
                 'required',
                 'numeric',
                 'min:10',
-                // 'unique:contacts,phone'
                 Rule::unique('contacts')->ignore($this->id)
             ],
             'address' => ['required', 'string'],
-            // 'company_photo' => ['required', 'string'],
+            'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
         ];
     }
 }

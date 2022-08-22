@@ -9,6 +9,7 @@ use Inertia\Inertia;
 use App\Http\Requests\Contact\StoreContactRequest;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ContactController extends Controller
 {
@@ -47,6 +48,10 @@ class ContactController extends Controller
      */
     public function store(StoreContactRequest $request, Contact $contact)
     {
+        if($request->file('photo')) {
+            $photo = Storage::disk('local')->put('contacts', $request->file('photo'));
+            $request['photo_path'] = $photo;
+        }
         $data = $request->all();
         $data['user_id'] = Auth::user()->id;
         $contact->create($data);

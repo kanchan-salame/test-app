@@ -37,6 +37,7 @@ const photoPreview = ref(null);
 const photoInput = ref(null);
 
 const addContactInformation = () => {
+    console.log(photoInput.value);
     if (photoInput.value) {
         form.photo = photoInput.value.files[0];
     }
@@ -61,8 +62,6 @@ const addContactInformation = () => {
             },
         });
     }
-
-
 };
 
 const selectNewPhoto = () => {
@@ -114,7 +113,7 @@ const clearPhotoFileInput = () => {
 
         <template #form>
             <!-- Profile Photo -->
-            <div v-if="$page.props.jetstream.managesProfilePhotos" class="col-span-6 sm:col-span-4">
+            <div class="col-span-6 sm:col-span-4">
                 <!-- Profile Photo File Input -->
                 <input
                     ref="photoInput"
@@ -127,7 +126,7 @@ const clearPhotoFileInput = () => {
 
                 <!-- Current Profile Photo -->
                 <div v-show="! photoPreview" class="mt-2">
-                    <img :src="user.profile_photo_url" :alt="user.name" class="rounded-full h-20 w-20 object-cover">
+                    <img :src="form.photo ? form.photo : 'http://127.0.0.1:8000/dummy.jpg'" :alt="form.photo ? form.photo : 'dummy immage'" class="rounded-full h-20 w-20 object-cover">
                 </div>
 
                 <!-- New Profile Photo Preview -->
@@ -143,7 +142,7 @@ const clearPhotoFileInput = () => {
                 </JetSecondaryButton>
 
                 <JetSecondaryButton
-                    v-if="user.profile_photo_path"
+                    v-if="form.photo"
                     type="button"
                     class="mt-2"
                     @click.prevent="deletePhoto"
